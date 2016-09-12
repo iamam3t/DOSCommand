@@ -15,9 +15,10 @@ public class MDCommand extends DosCommands {
 
     @Override
     public void execute(String[] params) {
-
+        String workingDir = System.getProperty("user.dir");
+        File dir = new File(workingDir);
         if (params.length > 1) {
-            File file = new File(params[1]);
+            File file = new File(dir+"\\"+params[1]);
             file.mkdir();
         } else {
             System.out.println("Invalid command");

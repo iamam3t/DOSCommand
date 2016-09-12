@@ -15,9 +15,10 @@ public class RDCommand extends DosCommands {
 
     @Override
     public void execute(String[] token) {
-
+        String workingDir = System.getProperty("user.dir");
+        File dir = new File(workingDir);
         if (token.length > 1) {
-            File file = new File(token[1]);
+            File file = new File(dir+"\\"+token[1]);
             file.delete();
         } else {
             System.out.println("Invalid command");
