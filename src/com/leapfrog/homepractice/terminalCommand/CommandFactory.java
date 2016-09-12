@@ -20,6 +20,10 @@ public class CommandFactory {
            return new DateCommand();
        }else if(cmd.equalsIgnoreCase("cd")){
            return new CDCommand();
+       }else if(cmd.equalsIgnoreCase("cd..")){
+           return new CDBackCommand();
+       }else if(cmd.equalsIgnoreCase("cd\\")){
+           return new CDRootCommand();
        }
        return null;
    } 

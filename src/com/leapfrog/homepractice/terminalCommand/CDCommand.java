@@ -13,8 +13,6 @@ import java.io.File;
  */
 public class CDCommand extends DosCommands {
 
-    private String dirPath = System.getProperty("user.dir");
-
     @Override
     public void execute(String[] token) {
 
@@ -24,7 +22,7 @@ public class CDCommand extends DosCommands {
             File dir = new File(Dir+ "\\" +token[1]);
             if (dir.isDirectory()) {
                 System.setProperty("user.dir", dir.toString());
-                
+                System.out.println(System.getProperty("user.dir"));
             } else {
                 System.out.println("Directory doesnot exist");
             }
